@@ -1,7 +1,7 @@
 .col-md-2.col-sm-2.col-xs-2
   .mobile-menu
     %aside#sidebar
-      %a#showLeft{:href => "#"}
+      %a#showLeft{:href => "javascript:;"}
         %span
         %span
         %span
@@ -19,3 +19,4 @@
             = link_to "My Account",account_admin_path(current_admin)
           %li{ class: "#{active_class('admin','index')}" }
             = link_to "Admins", admin_index_path
+
