@@ -4,12 +4,14 @@ $(document).on("turbolinks:load",function() {
     var category_id = $( ".get-category" ).val();
     var type = $( ".get-type" ).val();
     if (category_id=="" || type=="" ) {
-      $("#questions-table").hide();
+      $("#questions-table").addClass('hide');
       $('#preview-poll').addClass('hide');
       $('.mySlides').remove();
     }
     else {
-      $("#questions-table").show();
+      // $("#questions-table").show();
+      $('.question-loader').removeClass('hide');
+      $("#questions-table").addClass('hide');
       $.ajax({
         method: 'GET',
         url: "/polls/update_questions",
@@ -19,6 +21,9 @@ $(document).on("turbolinks:load",function() {
           if ($('#questions-table').hasClass('hide')) {
             $('#questions-table').removeClass('hide');
           }
+        },
+        complete: function(){
+          $('.question-loader').addClass('hide');
         }
       }).fail(function () {
         alert("the call failed");
@@ -28,12 +33,20 @@ $(document).on("turbolinks:load",function() {
   $(document).on('change', '.get-created-category, .get-created-type', function(e) {
     var category_id = $( ".get-created-category" ).val();
     var type = $( ".get-created-type" ).val();
+    $('.poll-loader').removeClass('hide');
+    $("#polls-table").addClass('hide');
     $.ajax({
       method: 'GET',
       url: "/polls",
       dataType : 'script',
       data: { poll: { category_id: category_id,poll_type: type } },
       success: function (response) {
+        if ($('#polls-table').hasClass('hide')) {
+          $('#polls-table').removeClass('hide');
+        }
+      },
+      complete: function(){
+        $('.poll-loader').addClass('hide');
       }
     }).fail(function () {
       alert("the call failed");
