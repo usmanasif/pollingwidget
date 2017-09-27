@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'carrierwave'
+gem 'fog'
 gem "mini_magick"
 gem 'will_paginate', '~> 3.1.0'
 
