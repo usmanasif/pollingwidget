@@ -1,0 +1,231 @@
+.poll-show
+  %h1 #{@poll.name}
+  #myCarousel-468.px468.carousel.slide{"data-ride" => "carousel"}
+    / Wrapper for slides
+    .carousel-inner
+      - @poll_questions.each_with_index do |question,index|
+        .item.show-question{class: ("active" if index == 0)}
+          .row
+            .col-sm-4
+              %div.profile-image{:type => "file"}
+                %img#question-show-image{:src => question.image.present? ? question.image.thumb :  asset_path("avatar.png")}
+            .col-sm-8
+              .field.form-group
+                %p #{question.question}
+              .field.form-group
+                - if question.question_type == "Multi"
+                  %ul.question-list.edit-question
+                    - question.options.each_with_index do |opt,ind|
+                      %li
+                        %input.form-control{:name => "question[options][#{ind+1}]",:disabled => true, :type => "text",:id=> "question_options",value: opt.second}
+                - else
+                  %ul.radio-list
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "true"}>
+                        TRUE
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "false"}>
+                        FALSE
+    / Left and right controls
+    %button.w3-display-left.widget-show-left{"data-slide" => "prev", :href => "#myCarousel-468"}
+      %span.fa.fa-chevron-left
+      %span.sr-only Previous
+    %button.w3-display-right.widget-show-right{"data-slide" => "next", :href => "#myCarousel-468"}
+      %span.fa.fa-chevron-right
+      %span.sr-only Next
+  %button.btn.btn-wirte{"data-target" => "#myModal468", "data-toggle" => "modal", :type => "button"}
+    Grab the code
+  %span Size: 468*60
+  #myModal468.modal.fade.in.new-category{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-body
+          %h1 Grab the code
+          .field.form-group
+            = text_area_tag :code, "<script src='http://c17cfaa4.ngrok.io/assets/widgets.js' type='text/javascript'></script>\n<div id='widget-container' data-value='#{@poll.id}' class='px468'></div>",class: "form-control",rows: 3
+          .actions.modal-btn-area
+  #myCarousel-234.px234.carousel.slide{"data-ride" => "carousel"}
+    / Wrapper for slides
+    .carousel-inner
+      - @poll_questions.each_with_index do |question,index|
+        .item.show-question{class: ("active" if index == 0)}
+          .row
+            .col-sm-4
+              %div.profile-image{:type => "file"}
+                %img#question-show-image{:src => question.image.present? ? question.image.thumb :  asset_path("avatar.png")}
+            .col-sm-8
+              .field.form-group
+                %p #{question.question}
+              .field.form-group
+                - if question.question_type == "Multi"
+                  %ul.question-list.edit-question
+                    - question.options.each_with_index do |opt,ind|
+                      %li
+                        %input.form-control{:name => "question[options][#{ind+1}]",:disabled => true, :type => "text",:id=> "question_options",value: opt.second}
+                - else
+                  %ul.radio-list
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "true"}>
+                        TRUE
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "false"}>
+                        FALSE
+    / Left and right controls
+    %button.w3-display-left.widget-show-left{"data-slide" => "prev", :href => "#myCarousel-234"}
+      %span.fa.fa-chevron-left
+      %span.sr-only Previous
+    %button.w3-display-right.widget-show-right{"data-slide" => "next", :href => "#myCarousel-234"}
+      %span.fa.fa-chevron-right
+      %span.sr-only Next
+  %button.btn.btn-wirte{"data-target" => "#myModal234", "data-toggle" => "modal", :type => "button"}
+    Grab the code
+  %span Size: 234*60
+  #myModal234.modal.fade.in.new-category{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-body
+          %h1 Grab the code
+          .field.form-group
+            = text_area_tag :code, "<script src='http://c17cfaa4.ngrok.io/assets/widgets.js' type='text/javascript'></script>\n<div id='widget-container' data-value='#{@poll.id}' class='px234'></div>",class: "form-control",rows: 3
+          .actions.modal-btn-area
+  #myCarousel-300-100.px300-100.carousel.slide{"data-ride" => "carousel"}
+    / Wrapper for slides
+    .carousel-inner
+      - @poll_questions.each_with_index do |question,index|
+        .item.show-question{class: ("active" if index == 0)}
+          .row
+            .col-sm-4
+              %div.profile-image{:type => "file"}
+                %img#question-show-image{:src => question.image.present? ? question.image.thumb :  asset_path("avatar.png")}
+            .col-sm-8
+              .field.form-group
+                %p #{question.question}
+              .field.form-group
+                - if question.question_type == "Multi"
+                  %ul.question-list.edit-question
+                    - question.options.each_with_index do |opt,ind|
+                      %li
+                        %input.form-control{:name => "question[options][#{ind+1}]",:disabled => true, :type => "text",:id=> "question_options",value: opt.second}
+                - else
+                  %ul.radio-list
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "true"}>
+                        TRUE
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "false"}>
+                        FALSE
+    / Left and right controls
+    %button.w3-display-left.widget-show-left{"data-slide" => "prev", :href => "#myCarousel-300-100"}
+      %span.fa.fa-chevron-left
+      %span.sr-only Previous
+    %button.w3-display-right.widget-show-right{"data-slide" => "next", :href => "#myCarousel-300-100"}
+      %span.fa.fa-chevron-right
+      %span.sr-only Next
+  %button.btn.btn-wirte{"data-target" => "#myModal300-100", "data-toggle" => "modal", :type => "button"}
+    Grab the code
+  %span Size: 300*100
+  #myModal300-100.modal.fade.in.new-category{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-body
+          %h1 Grab the code
+          .field.form-group
+            = text_area_tag :code, "<script src='http://c17cfaa4.ngrok.io/assets/widgets.js' type='text/javascript'></script>\n<div id='widget-container' data-value='#{@poll.id}' class='px300-100'></div>",class: "form-control",rows: 3
+          .actions.modal-btn-area
+  #myCarousel.px300.carousel.slide{"data-ride" => "carousel"}
+    .carousel-inner
+      - @poll_questions.each_with_index do |question,index|
+        .item.show-question{class: ("active" if index == 0)}
+          .row
+            .col-sm-4
+              %div.profile-image{:type => "file"}
+                %img#question-show-image{:src => question.image.present? ? question.image.thumb :  asset_path("avatar.png")}
+            .col-sm-8
+              .field.form-group
+                %p #{question.question}
+              .field.form-group
+                - if question.question_type == "Multi"
+                  %ul.question-list.edit-question
+                    - question.options.each_with_index do |opt,ind|
+                      %li
+                        %input.form-control{:name => "question[options][#{ind+1}]",:disabled => true, :type => "text",:id=> "question_options",value: opt.second}
+                - else
+                  %ul.radio-list
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "true"}>
+                        TRUE
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "false"}>
+                        FALSE
+    / Left and right controls
+    %button.w3-display-left.widget-show-left{"data-slide" => "prev", :href => "#myCarousel"}
+      %span.fa.fa-chevron-left
+      %span.sr-only Previous
+    %button.w3-display-right.widget-show-right{"data-slide" => "next", :href => "#myCarousel"}
+      %span.fa.fa-chevron-right
+      %span.sr-only Next
+  %button.btn.btn-wirte{"data-target" => "#myModal300", "data-toggle" => "modal", :type => "button"}
+    Grab the code
+  %span Size: 300*250
+  #myModal300.modal.fade.in.new-category{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-body
+          %h1 Grab the code
+          .field.form-group
+            = text_area_tag :code, "<script src='http://c17cfaa4.ngrok.io/assets/widgets.js' type='text/javascript'></script>\n<div id='widget-container' data-value='#{@poll.id}' class='px300'></div>",class: "form-control",rows: 3
+          .actions.modal-btn-area
+  #myCarousel-728.px728.carousel.slide{"data-ride" => "carousel"}
+    / Wrapper for slides
+    .carousel-inner
+      - @poll_questions.each_with_index do |question,index|
+        .item.show-question{class: ("active" if index == 0)}
+          .row
+            .col-sm-4
+              %div.profile-image{:type => "file"}
+                %img#question-show-image{:src => question.image.present? ? question.image.thumb :  asset_path("avatar.png")}
+            .col-sm-8
+              .field.form-group
+                %p #{question.question}
+              .field.form-group
+                - if question.question_type == "Multi"
+                  %ul.question-list.edit-question
+                    - question.options.each_with_index do |opt,ind|
+                      %li
+                        %input.form-control{:name => "question[options][#{ind+1}]",:disabled => true, :type => "text",:id=> "question_options",value: opt.second}
+                - else
+                  %ul.radio-list
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "true"}>
+                        TRUE
+                    %li
+                      %label.radio-inline
+                        %input{:name => "question[correct_option]",:disabled => true, :type => "radio", :value => "false"}>
+                        FALSE
+    / Left and right controls
+    %button.w3-display-left.widget-show-left{"data-slide" => "prev", :href => "#myCarousel-728"}
+      %span.fa.fa-chevron-left
+      %span.sr-only Previous
+    %button.w3-display-right.widget-show-right{"data-slide" => "next", :href => "#myCarousel-728"}
+      %span.fa.fa-chevron-right
+      %span.sr-only Next
+  %button.btn.btn-wirte{"data-target" => "#myModal728", "data-toggle" => "modal", :type => "button"}
+    Grab the code
+  %span Size: 300*900
+  #myModal728.modal.fade.in.new-category{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-body
+          %h1 Grab the code
+          .field.form-group
+            = text_area_tag :code, "<script src='http://c17cfaa4.ngrok.io/assets/widgets.js' type='text/javascript'></script>\n<div id='widget-container' data-value='#{@poll.id}' class='px728'></div>",class: "form-control",rows: 3
+          .actions.modal-btn-area

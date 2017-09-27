@@ -46,6 +46,9 @@ class AdminController < ApplicationController
 
   def account
     @admin = Admin.find(current_admin.id)
+    @poll = Poll.first
+    @poll_questions = @poll.questions
+    @category = @poll.category
   end
 
   private

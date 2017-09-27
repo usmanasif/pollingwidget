@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :polls do
     collection do
       get :update_questions
+      get :get_widget
     end
   end
 

@@ -78,14 +78,14 @@ input.hidden {
 .polls-selects {
   padding: 2% 3% 6%;
 }
-.mySlides {
+.mySlides,.item {
   background: lightgray;
   width: 70%;
   margin: 0 auto;
   padding: 20px;
   margin-top: 4%;
 }
-.mySlides.show-question {
+.mySlides.show-question,.item.show-question {
   width: 89%;
 }
 .w3-content {
@@ -118,10 +118,14 @@ input.hidden {
   text-align: center;
   color: #fff;
 }
-.w3-display-left.question-show-left {
+.w3-display-left.widget-show-left,.w3-display-right.widget-show-right {
+  top:50%;
+
+}
+.w3-display-left.question-show-left,.w3-display-left.widget-show-left {
   left: 0%;
 }
-.w3-display-right.question-show-right {
+.w3-display-right.question-show-right,.w3-display-right.widget-show-right {
   right: 0%;
 }
 .poll-preview-buttons {
@@ -191,4 +195,91 @@ input.hidden {
 }
 #question-number.preview-count {
   margin-right: 12%;
+}
+.widget-slider.px300-widget .mySlides {
+  width: 300px;
+  height: 250px;
+}
+.px300-widget-display-left {
+  position: absolute;
+  top: 67%;
+  left: 42%;
+  border-radius: 100%;
+  width: 27px;
+  height: 27px;
+  border: none;
+  line-height: 15px;
+  text-align: center;
+  color: #fff;
+}
+.px300-widget-display-right{
+  position: absolute;
+  top: 67%;
+  right: 26%;
+  left: auto;
+  border-radius: 100%;
+  width: 27px;
+  height: 27px;
+  border: none;
+  line-height: 15px;
+  text-align: center;
+  color: #fff;
+}
+.widget-slider.px728-widget .mySlides {
+  width: 728px;
+  height: 900px;
+}
+.px728-widget-display-left {
+  position: absolute;
+  top: 67%;
+  left: 42%;
+  border-radius: 100%;
+  width: 27px;
+  height: 27px;
+  border: none;
+  line-height: 15px;
+  text-align: center;
+  color: #fff;
+}
+.px728-widget-display-right{
+  position: absolute;
+  top: 67%;
+  right: 26%;
+  left: auto;
+  border-radius: 100%;
+  width: 27px;
+  height: 27px;
+  border: none;
+  line-height: 15px;
+  text-align: center;
+  color: #fff;
+}
+.widget-slider.radio-list,.item .radio-list {
+  width: 224px;
+}
+#myCarousel.px300,#myCarousel.px300 .item {
+  width: 300px;
+  height: 250px;
+}
+#myCarousel-728.px728,#myCarousel-728.px728 .item {
+  width: 728px;
+  height: 900px;
+}
+#myCarousel-468.px468,#myCarousel-468.px468 .item {
+  width: 468px;
+  height: 60px;
+}
+#myCarousel-234.px234,#myCarousel-234.px234 .item {
+  width: 234px;
+  height: 60px;
+}
+#myCarousel-300-100.px300-100,#myCarousel-300-100.px300-100 .item {
+  width: 300px;
+  height: 100px;
+}
+#myCarousel-468.px468 {
+  /*margin-top: 3%;*/
+}
+#myCarousel.px300,#myCarousel-728.px728,#myCarousel-468.px468,#myCarousel-234.px234,#myCarousel-300-100.px300-100 {
+  overflow: hidden;
 }

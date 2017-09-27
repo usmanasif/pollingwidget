@@ -23,26 +23,26 @@
                 True or False
         .form-data
           .form-group
-            %label{:for => "exampleInputEmail1"} Question
-            = f.text_field :question,class: "form-control",:placeholder => "Write the poll question here (character max limit?)", :rows => "4"
+            %label Question
+            = f.text_field :question,class: "form-control",:placeholder => "Write the poll question here (character max limit?)", required: true
           .form-group
             .multiple
-              %label{:for => "exampleInputPassword1"} Answer Choices
+              %label Answer Choices
               %ul.question-list
                 %li
-                  %input.form-control{:name => "question[options][1]", :type => "text",:id=> "question_options", placeholder: "correct answer"}
+                  %input.form-control{:name => "question[options][1]", :type => "text",:id=> "question_options", placeholder: "correct answer", required: true}
                 %li
-                  %input.form-control{:name => "question[options][2]", :type => "text",:id=> "question_options", placeholder: "wrong answer"}
+                  %input.form-control{:name => "question[options][2]", :type => "text",:id=> "question_options", placeholder: "wrong answer", required: true}
                 %li
-                  %input.form-control{:name => "question[options][3]", :type => "text",:id=> "question_options", placeholder: "wrong answer"}
+                  %input.form-control{:name => "question[options][3]", :type => "text",:id=> "question_options", placeholder: "wrong answer", required: true}
                 %li
-                  %input.form-control{:name => "question[options][4]", :type => "text",:id=> "question_options", placeholder: "wrong answer"}
+                  %input.form-control{:name => "question[options][4]", :type => "text",:id=> "question_options", placeholder: "wrong answer", required: true}
             .truefalse
               %label{:for => "exampleInputPassword1"} check the correct answer
               %ul.radio-list
                 %li
                   %label.radio-inline
-                    %input{:name => "question[correct_option]", :type => "radio", :value => "true"}>
+                    %input{:name => "question[correct_option]", :type => "radio", :value => "true",checked: true}>
                     TRUE
                 %li
                   %label.radio-inline
@@ -57,10 +57,10 @@
                 Upload Image
                 = f.file_field :image,class: "upload",:onchange => "readURL(this);"
         .form-group
-          %input.form-control{:placeholder => "img url//******************", :type => "text"}/
+          %input.form-control{:placeholder => "img url//******************", :type => "text"}
       .col-md-6.col-sm-6.col-xs-12
         .form-group
-          %label{:for => "exampleInputEmail1"} Preview
+          %label Preview
           .preview-block
             .question-preview-result
               .col-md-4
@@ -82,11 +82,11 @@
               %ul.radio-list
                 %li
                   %label.radio-inline
-                    %input#inlineRadio1{:name => "inlineRadioOptions", :type => "radio", :value => "option1"}>/
+                    %input#inlineRadio1{:name => "inlineRadioOptions", :type => "radio", :value => "option1"}>
                     TRUE
                 %li
                   %label.radio-inline
-                    %input#inlineRadio2{:name => "inlineRadioOptions", :type => "radio", :value => "option2"}>/
+                    %input#inlineRadio2{:name => "inlineRadioOptions", :type => "radio", :value => "option2"}>
                     FALSE
           .row
             .col-md-6.col-sm-6.col-xs-6

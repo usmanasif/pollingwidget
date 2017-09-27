@@ -1,6 +1,8 @@
 class PollsController < ApplicationController
   before_filter :set_layout
-  before_action :set_poll, only: [:update, :destroy, :edit, :show, :update]
+  before_action :set_poll, only: [:update, :destroy, :edit, :show, :update,:get_widget]
+  protect_from_forgery with: :exception, except: [:get_widget]
+  before_action :authenticate_admin!, except: [:get_widget]
 
   def index
     @categories = Category.all
@@ -45,10 +47,35 @@ class PollsController < ApplicationController
       redirect_to polls_url, notice: 'poll could not be created.'
     end
   end
+  def get_widget
+    # @poll = Poll.first
+    @poll_questions = @poll.questions
+    @category = @poll.category
+    # Store HTML in a variable rather than returning in to the browser
+    # html = "<strong>lalala!</strong>"
+    html = view_context.render 'widget'
+    # Build a JSON object containing our HTML
+    json = {"html" => html}.to_json
+    # Get the name of the JSONP callback created by jQuery
+    callback = params[:callback]
+    # Wrap the JSON object with a call to the JSONP callback
+    jsonp = callback + "(" + json + ")"
+    # Send result to the browser
+    puts "========================"
+    puts "========================"
+    puts "lalalalallalalalalallala"
+    puts "========================"
+    puts "========================"
+    render js: jsonp, content_type: "application/javascript"
+  end
 
   def show
     @poll_questions = @poll.questions
     @category = @poll.category
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def destroy
